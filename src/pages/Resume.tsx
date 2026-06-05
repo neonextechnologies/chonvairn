@@ -42,7 +42,7 @@ const contactItems = [
   { icon: <MapPin className="w-3.5 h-3.5" />, href: null, label: 'Pathum Thani, Thailand', ext: false },
 ]
 
-const downloadPdf = '/downloads/chonvarin-resume.pdf'
+const downloadPdf = 'https://drive.google.com/uc?export=download&id=1ZM6obF3_II38YfxdVevVxUfr_vv52orZ'
 
 export default function Resume() {
   return (
