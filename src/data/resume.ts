@@ -209,6 +209,3 @@ export const achievements = [
       'Applied workflow automation, digital transformation, and AI-enabled solution concepts to reduce repetitive work and improve business process efficiency.',
   },
 ]
-
-
-export { experiences, education }
