@@ -1,6 +1,9 @@
 import { useState } from 'react'
-import { Mail, MapPin, ExternalLink, Send, CircleCheck as CheckCircle } from 'lucide-react'
+import { Mail, MapPin, ExternalLink, Send, CircleCheck as CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import SectionHeader from '../components/SectionHeader'
+
+const EDGE_FN_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`
+const ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 const projectTypes = [
   'IT Project Management',
@@ -17,38 +20,103 @@ const projectTypes = [
 interface FormState {
   name: string
   email: string
+  phone: string
   company: string
   projectType: string
   message: string
+  honeypot: string // hidden anti-spam field
 }
 
-const inputClass =
-  'w-full rounded-xl px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8]/40 transition-all duration-200 outline-none focus:ring-1 focus:ring-[#38BDF8]/30 focus:border-[#38BDF8]/40'
-const inputStyle = {
-  background: '#111827',
-  border: '1px solid #1A2535',
+interface FieldErrors {
+  name?: string
+  email?: string
+  message?: string
+}
+
+const inputBase =
+  'w-full rounded-xl px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8]/35 transition-all duration-200 outline-none focus:ring-1'
+const inputNormal = { background: '#111827', border: '1px solid #1A2535' }
+const inputError = { background: '#111827', border: '1px solid rgba(248,113,113,0.4)' }
+
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+function validateForm(form: FormState): FieldErrors {
+  const errors: FieldErrors = {}
+  if (!form.name.trim()) errors.name = 'Name is required.'
+  if (!form.email.trim()) errors.email = 'Email is required.'
+  else if (!isValidEmail(form.email.trim())) errors.email = 'Please enter a valid email address.'
+  if (!form.message.trim()) errors.message = 'Message is required.'
+  return errors
+}
+
+const emptyForm: FormState = {
+  name: '', email: '', phone: '', company: '', projectType: '', message: '', honeypot: '',
 }
 
 export default function Contact() {
-  const [form, setForm] = useState<FormState>({
-    name: '', email: '', company: '', projectType: '', message: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
+  const [form, setForm] = useState<FormState>(emptyForm)
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    const { name, value } = e.target
+    setForm((prev) => ({ ...prev, [name]: value }))
+    // Clear field error on change
+    if (name in fieldErrors) {
+      setFieldErrors((prev) => ({ ...prev, [name]: undefined }))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitting(true)
-    // Connect to backend or email service as needed
-    await new Promise((r) => setTimeout(r, 1000))
-    setSubmitting(false)
-    setSubmitted(true)
+
+    const errors = validateForm(form)
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors)
+      return
+    }
+
+    setStatus('sending')
+    setErrorMessage('')
+
+    try {
+      const res = await fetch(EDGE_FN_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${ANON_KEY}`,
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim() || undefined,
+          company: form.company.trim() || undefined,
+          projectType: form.projectType || undefined,
+          message: form.message.trim(),
+          pageUrl: window.location.href,
+          honeypot: form.honeypot,
+        }),
+      })
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        throw new Error(body?.error ?? `Request failed (${res.status})`)
+      }
+
+      setStatus('success')
+    } catch (err) {
+      setStatus('error')
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : 'An unexpected error occurred. Please try again or email directly.'
+      )
+    }
   }
 
   return (
@@ -76,9 +144,6 @@ export default function Contact() {
             </p>
             <p className="text-[#94A3B8] text-sm leading-relaxed mt-3">
               พูดคุยเรื่องระบบ งานดิจิทัล เวิร์กโฟลว์ หรือโครงการ IT ของคุณ
-              <br />
-              ไม่ว่าจะเป็นโอกาสด้านงานประจำ ที่ปรึกษาโครงการ หรือการพัฒนาระบบสำหรับธุรกิจ
-              สามารถติดต่อเพื่อพูดคุยแนวทางที่เหมาะสมได้
             </p>
           </div>
         </div>
@@ -152,7 +217,7 @@ export default function Contact() {
 
             {/* ── Form ── */}
             <div>
-              {submitted ? (
+              {status === 'success' ? (
                 <div className="rounded-2xl p-10 flex flex-col items-center text-center gap-5"
                   style={{ background: '#0A1020', border: '1px solid rgba(52,211,153,0.15)' }}>
                   <div className="w-16 h-16 rounded-2xl flex items-center justify-center"
@@ -171,8 +236,9 @@ export default function Contact() {
                   </div>
                   <button
                     onClick={() => {
-                      setSubmitted(false)
-                      setForm({ name: '', email: '', company: '', projectType: '', message: '' })
+                      setStatus('idle')
+                      setForm(emptyForm)
+                      setFieldErrors({})
                     }}
                     className="btn-ghost text-sm"
                   >
@@ -182,6 +248,7 @@ export default function Contact() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
+                  noValidate
                   className="rounded-2xl p-6 md:p-8 flex flex-col gap-5"
                   style={{ background: '#0A1020', border: '1px solid rgba(56,189,248,0.08)' }}
                 >
@@ -192,10 +259,19 @@ export default function Contact() {
                     </p>
                   </div>
 
-                  <div
-                    className="h-px"
-                    style={{ background: 'rgba(56,189,248,0.06)' }}
-                  />
+                  <div className="h-px" style={{ background: 'rgba(56,189,248,0.06)' }} />
+
+                  {/* Honeypot — hidden from real users, bots fill it */}
+                  <div aria-hidden="true" style={{ display: 'none' }}>
+                    <input
+                      type="text"
+                      name="honeypot"
+                      value={form.honeypot}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -204,9 +280,17 @@ export default function Contact() {
                       </label>
                       <input
                         type="text" name="name" value={form.name} onChange={handleChange}
-                        required placeholder="Your name"
-                        className={inputClass} style={inputStyle}
+                        placeholder="Your name"
+                        className={`${inputBase} focus:ring-[#38BDF8]/30 focus:border-[#38BDF8]/40`}
+                        style={fieldErrors.name ? inputError : inputNormal}
+                        aria-describedby={fieldErrors.name ? 'err-name' : undefined}
                       />
+                      {fieldErrors.name && (
+                        <p id="err-name" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3 flex-shrink-0" />
+                          {fieldErrors.name}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <label className="block text-[#CBD5E1] text-xs font-medium mb-2 tracking-wide uppercase">
@@ -214,21 +298,43 @@ export default function Contact() {
                       </label>
                       <input
                         type="email" name="email" value={form.email} onChange={handleChange}
-                        required placeholder="your@email.com"
-                        className={inputClass} style={inputStyle}
+                        placeholder="your@email.com"
+                        className={`${inputBase} focus:ring-[#38BDF8]/30 focus:border-[#38BDF8]/40`}
+                        style={fieldErrors.email ? inputError : inputNormal}
+                        aria-describedby={fieldErrors.email ? 'err-email' : undefined}
                       />
+                      {fieldErrors.email && (
+                        <p id="err-email" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3 flex-shrink-0" />
+                          {fieldErrors.email}
+                        </p>
+                      )}
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-[#CBD5E1] text-xs font-medium mb-2 tracking-wide uppercase">
-                      Company / Organization
-                    </label>
-                    <input
-                      type="text" name="company" value={form.company} onChange={handleChange}
-                      placeholder="Company or organization name"
-                      className={inputClass} style={inputStyle}
-                    />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[#CBD5E1] text-xs font-medium mb-2 tracking-wide uppercase">
+                        Phone
+                      </label>
+                      <input
+                        type="tel" name="phone" value={form.phone} onChange={handleChange}
+                        placeholder="+66 xx-xxx-xxxx"
+                        className={`${inputBase} focus:ring-[#38BDF8]/30 focus:border-[#38BDF8]/40`}
+                        style={inputNormal}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[#CBD5E1] text-xs font-medium mb-2 tracking-wide uppercase">
+                        Company / Organization
+                      </label>
+                      <input
+                        type="text" name="company" value={form.company} onChange={handleChange}
+                        placeholder="Company name"
+                        className={`${inputBase} focus:ring-[#38BDF8]/30 focus:border-[#38BDF8]/40`}
+                        style={inputNormal}
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -237,7 +343,8 @@ export default function Contact() {
                     </label>
                     <select
                       name="projectType" value={form.projectType} onChange={handleChange}
-                      className={`${inputClass} appearance-none`} style={inputStyle}
+                      className={`${inputBase} appearance-none focus:ring-[#38BDF8]/30 focus:border-[#38BDF8]/40`}
+                      style={inputNormal}
                     >
                       <option value="">Select a type...</option>
                       {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
@@ -250,20 +357,39 @@ export default function Contact() {
                     </label>
                     <textarea
                       name="message" value={form.message} onChange={handleChange}
-                      required rows={5}
+                      rows={5}
                       placeholder="Describe your project, requirements, or inquiry..."
-                      className={`${inputClass} resize-none`} style={inputStyle}
+                      className={`${inputBase} resize-none focus:ring-[#38BDF8]/30 focus:border-[#38BDF8]/40`}
+                      style={fieldErrors.message ? inputError : inputNormal}
+                      aria-describedby={fieldErrors.message ? 'err-message' : undefined}
                     />
+                    {fieldErrors.message && (
+                      <p id="err-message" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3 flex-shrink-0" />
+                        {fieldErrors.message}
+                      </p>
+                    )}
                   </div>
+
+                  {/* Server error banner */}
+                  {status === 'error' && (
+                    <div
+                      className="rounded-xl px-4 py-3 flex items-start gap-2.5"
+                      style={{ background: 'rgba(248,113,113,0.06)', border: '1px solid rgba(248,113,113,0.2)' }}
+                    >
+                      <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-red-400 leading-relaxed">{errorMessage}</p>
+                    </div>
+                  )}
 
                   <button
                     type="submit"
-                    disabled={submitting}
+                    disabled={status === 'sending'}
                     className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {submitting ? (
+                    {status === 'sending' ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-[#030912]/30 border-t-[#030912] rounded-full animate-spin" />
+                        <Loader2 className="w-4 h-4 animate-spin" />
                         Sending...
                       </>
                     ) : (
