@@ -55,14 +55,14 @@ export default function Footer() {
 
             <p className="text-[#94A3B8] text-sm leading-relaxed max-w-xs">
               IT Project Manager · Digital Transformation Consultant · AI-enabled IT Solution
-              Specialist · Founder / CEO of Neonex Technologies
+              Specialist · Workflow &amp; Business Process Automation
             </p>
 
             {/* Badges */}
             <div className="flex flex-wrap gap-2">
-              <span className="badge-gold">Founder / CEO</span>
               <span className="badge-cyan">20+ Years Experience</span>
-              <span className="badge-muted">Neonex Technologies</span>
+              <span className="badge-muted">IT Project Manager</span>
+              <span className="badge-muted">Digital Transformation</span>
             </div>
 
             {/* Contact */}

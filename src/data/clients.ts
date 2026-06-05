@@ -60,9 +60,9 @@ export const stats = [
     accent: 'cyan',
   },
   {
-    value: 'CEO',
-    label: 'Founder / CEO of Neonex Technologies',
-    labelTh: 'ผู้ก่อตั้ง / CEO Neonex Technologies',
+    value: '3+',
+    label: 'Proprietary IT Solution Products',
+    labelTh: 'ผลิตภัณฑ์ IT Solution ที่พัฒนาขึ้นเอง',
     accent: 'gold',
   },
 ]

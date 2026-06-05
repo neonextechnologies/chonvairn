@@ -78,15 +78,15 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'neonex-technologies',
-    name: 'Neonex Technologies Ecosystem',
+    id: 'it-infrastructure-platform',
+    name: 'IT Infrastructure & Hosting Platform',
     category: 'Digital Solution / Hosting / AI-enabled Workflow',
     tags: ['Digital Transformation', 'Hosting', 'AI-enabled', 'Workflow'],
-    role: 'Founder, IT Manager, Solution Architect',
+    role: 'IT Manager, Solution Architect, Infrastructure Lead',
     problem:
-      'SMEs and organizations need practical technology partners for websites, hosting, workflow, automation, and digital transformation that are reliable and business-oriented.',
+      'SMEs and organizations need reliable technology platforms for websites, hosting, workflow automation, and digital transformation that are business-oriented and scalable.',
     solution:
-      'Built a technology service ecosystem for IT solutions, hosting, digital transformation, workflow automation, and AI-enabled business systems.',
+      'Designed and managed an IT infrastructure platform covering Linux server environments, Proxmox virtualization, hosting setup, deployment pipelines, and AI-enabled workflow automation.',
     businessValue:
       'Provides a scalable foundation for client solution delivery and professional IT services to businesses across multiple industries.',
     technologies: ['Linux', 'Proxmox', 'Laravel', 'Golang', 'Next.js', 'AI Integration'],

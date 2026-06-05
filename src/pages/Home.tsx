@@ -201,8 +201,8 @@ function HeroSection() {
                   boxShadow: '0 4px 24px rgba(0,0,0,0.6)',
                 }}
               >
-                <p className="text-[#D4AF37] text-xs font-bold leading-none">Founder / CEO</p>
-                <p className="text-[#94A3B8] text-xs mt-0.5">Neonex Technologies</p>
+                <p className="text-[#D4AF37] text-xs font-bold leading-none">IT Project Manager</p>
+                <p className="text-[#94A3B8] text-xs mt-0.5">Digital Transformation</p>
               </div>
             </div>
           </div>
