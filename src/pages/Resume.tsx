@@ -180,9 +180,9 @@ export default function Resume() {
               IT Project Manager and AI-enabled IT Solution Specialist with{' '}
               <strong className="text-[#F8FAFC] font-semibold">20+ years of progressive experience</strong>{' '}
               spanning IT support, web development, custom business application development, IT
-              infrastructure, hosting environments, and digital transformation. Career path from IT
-              Support → Developer → Co-founder → IT Project Manager → Founder/CEO demonstrates deep
-              cross-functional understanding of both business operations and technical delivery.
+              infrastructure, hosting environments, and digital transformation. A career built from
+              IT Support → Developer → IT Project Manager demonstrates deep cross-functional
+              understanding of both business operations and technical delivery.
             </p>
             <p className="text-[#CBD5E1] text-base leading-[1.9] mt-4">
               Core strength is{' '}

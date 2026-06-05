@@ -2,7 +2,7 @@ import SectionHeader from '../components/SectionHeader'
 import Timeline from '../components/Timeline'
 import ContactCTA from '../components/ContactCTA'
 import { experiences, education } from '../data/resume'
-import { Building2, Target, Layers, Users, ChartBar as BarChart3, Bot, FileCheck, Headphones, GraduationCap } from 'lucide-react'
+import { Briefcase, Target, Layers, Users, ChartBar as BarChart3, Bot, FileCheck, Headphones, GraduationCap } from 'lucide-react'
 
 const philosophy = [
   { icon: Target, title: 'Practical System Delivery', desc: 'Focus on delivering systems that business users can actually use, not just technically completed projects.' },
@@ -37,9 +37,9 @@ export default function About() {
             <p className="text-[#CBD5E1] text-base leading-[1.85] mt-6">
               Chonvarin combines more than 20 years of progressive IT experience with a consultative approach
               that bridges business operations, technical teams, workflow design, and practical system
-              implementation. From IT support to developer to co-founder to IT Project Manager and
-              Founder / CEO — every stage of this career has been built on understanding both the business
-              side and the technology side, and connecting the two.
+              implementation. From IT support to developer to IT Project Manager — every stage of this
+              career has been built on understanding both the business side and the technology side,
+              and connecting the two.
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function About() {
               eyebrow="Career Journey"
               title="Professional Timeline"
               titleTh="เส้นทางอาชีพ"
-              subtitle="A progressive IT career from IT Support to IT Project Manager to Founder / CEO."
+              subtitle="A progressive IT career from IT Support to Developer to IT Project Manager."
               align="left"
             />
           </div>
@@ -130,47 +130,48 @@ export default function About() {
         </div>
       </section>
 
-      {/* Founder Profile */}
+      {/* Professional Direction */}
       <section className="py-24 bg-[#050B18]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="max-w-3xl mx-auto">
             <div
               className="relative overflow-hidden rounded-2xl p-8 md:p-10"
-              style={{ background: '#0A1020', border: '1px solid rgba(212,175,55,0.15)' }}
+              style={{ background: '#0A1020', border: '1px solid rgba(56,189,248,0.12)' }}
             >
-              {/* Gold glow */}
+              {/* Cyan glow */}
               <div
                 className="absolute top-0 right-0 w-64 h-64 pointer-events-none"
-                style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.05) 0%, transparent 70%)' }}
               />
               {/* Top accent */}
               <div
                 className="absolute top-0 left-0 right-0 h-px"
-                style={{ background: 'linear-gradient(90deg, rgba(212,175,55,0.4), rgba(212,175,55,0.1), transparent)' }}
+                style={{ background: 'linear-gradient(90deg, rgba(56,189,248,0.4), rgba(56,189,248,0.1), transparent)' }}
               />
 
               <div className="relative">
                 <div className="flex items-center gap-2 mb-4">
-                  <Building2 className="w-5 h-5 text-[#D4AF37]" />
-                  <span className="text-[#D4AF37] text-xs font-semibold tracking-[0.12em] uppercase">
-                    Founder Profile
+                  <Briefcase className="w-5 h-5 text-[#38BDF8]" />
+                  <span className="text-[#38BDF8] text-xs font-semibold tracking-[0.12em] uppercase">
+                    Current Direction
                   </span>
                 </div>
-                <div className="w-8 h-px bg-gradient-to-r from-[#D4AF37]/70 to-transparent mb-5" />
+                <div className="w-8 h-px bg-gradient-to-r from-[#38BDF8]/70 to-transparent mb-5" />
                 <h2 className="text-[#F8FAFC] font-bold text-2xl md:text-3xl mb-1.5">
-                  Neonex Technologies Co., Ltd.
+                  IT Consulting & Digital Transformation
                 </h2>
-                <p className="text-[#38BDF8] text-sm mb-5">Founder / CEO · 2025 – Present</p>
+                <p className="text-[#38BDF8] text-sm mb-5">IT Project Manager · AI-enabled IT Solution Specialist</p>
                 <p className="text-[#CBD5E1] text-base leading-[1.85] mb-4">
-                  Chonvarin founded Neonex Technologies to provide practical IT solutions, digital
-                  transformation services, workflow automation, hosting infrastructure, and AI-enabled
-                  business systems for SME and enterprise clients. The company builds on 20+ years of
-                  project delivery experience, combining consultative advisory with hands-on technical capability.
+                  Building on 20+ years of progressive IT delivery experience, Chonvarin focuses on
+                  consultative IT project management, digital transformation advisory, workflow automation,
+                  AI-enabled business system design, and practical solution delivery for SME and enterprise
+                  clients. Combining technical depth with business understanding to reduce the gap between
+                  business requirements and working IT solutions.
                 </p>
                 <p className="text-[#94A3B8] text-sm leading-relaxed">
-                  ชนม์วรินทร์ก่อตั้ง Neonex Technologies เพื่อให้บริการ IT Solution, Digital Transformation,
-                  Workflow Automation, Hosting Infrastructure และ AI-enabled Business System
-                  สำหรับลูกค้า SME และองค์กร โดยต่อยอดจากประสบการณ์การส่งมอบโครงการมากกว่า 20 ปี
+                  ต่อยอดจากประสบการณ์การส่งมอบโครงการ IT มากกว่า 20 ปี ด้วยการให้บริการที่ปรึกษาโครงการ IT,
+                  Digital Transformation, Workflow Automation, AI-enabled Business System
+                  สำหรับลูกค้า SME และองค์กร โดยเชื่อมโยงความเข้าใจธุรกิจกับการส่งมอบระบบที่ใช้งานได้จริง
                 </p>
               </div>
             </div>
