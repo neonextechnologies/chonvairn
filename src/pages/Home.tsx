@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
-  Download,
   Mail,
   FileText,
   Briefcase,
@@ -103,10 +102,10 @@ function HeroSection() {
                 <FileText className="w-4 h-4" />
                 View Resume
               </Link>
-              <a href="/downloads/chonvarin-resume.pdf" download className="btn-ghost">
-                <Download className="w-4 h-4" />
-                Download CV
-              </a>
+              <Link to="/contact" className="btn-ghost">
+                <Mail className="w-4 h-4" />
+                Contact Me
+              </Link>
             </div>
 
             {/* Audience CTA groups */}
@@ -118,11 +117,8 @@ function HeroSection() {
                 <p className="eyebrow text-[10px]">For HR / Recruiters</p>
                 <div className="flex flex-wrap gap-2">
                   <Link to="/resume" className="btn-ghost text-xs py-2 px-3">
-                    <FileText className="w-3 h-3" /> Resume
+                    <FileText className="w-3 h-3" /> View Resume
                   </Link>
-                  <a href="/downloads/chonvarin-resume.pdf" download className="btn-ghost text-xs py-2 px-3">
-                    <Download className="w-3 h-3" /> PDF
-                  </a>
                 </div>
               </div>
               <div className="flex flex-col gap-2">
@@ -499,96 +495,6 @@ function ProcessSection() {
   )
 }
 
-/* ─── Resume Preview ─── */
-function ResumePreviewSection() {
-  return (
-    <section
-      className="py-24"
-      style={{ background: 'linear-gradient(180deg, #0A1525 0%, #050B18 100%)' }}
-    >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-          <div>
-            <SectionHeader
-              eyebrow="Resume Summary"
-              title="Professional Overview"
-              titleTh="ภาพรวมวิชาชีพ"
-              align="left"
-            />
-            <ul className="mt-8 flex flex-col gap-3.5">
-              {[
-                'IT Project Manager with 20+ years of progressive experience',
-                'End-to-end project delivery from requirement to post-launch',
-                'Consultative approach: business need → system requirement → delivery',
-                'Team coordination up to 5 technical members',
-                '14+ enterprise and corporate clients across Thailand',
-                'Founder / CEO of Neonex Technologies Co., Ltd.',
-              ].map((point) => (
-                <li key={point} className="flex items-start gap-3">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#38BDF8] flex-shrink-0" />
-                  <span className="text-[#CBD5E1] text-sm">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div
-            className="rounded-2xl p-7 flex flex-col gap-5"
-            style={{
-              background: '#0A1020',
-              border: '1px solid rgba(56,189,248,0.1)',
-            }}
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="text-[#F8FAFC] font-bold text-lg">Download Resume</h3>
-                <p className="text-[#94A3B8] text-sm mt-1 leading-relaxed">
-                  Available for HR review, recruitment screening, and professional reference.
-                </p>
-                <p className="text-[#94A3B8]/60 text-xs mt-1">
-                  มีไฟล์ PDF และ DOCX สำหรับ HR ใช้ตรวจสอบประวัติ พิจารณางาน และอ้างอิงทางวิชาชีพ
-                </p>
-              </div>
-              <span className="badge-gold flex-shrink-0">Updated 2025</span>
-            </div>
-
-            <div
-              className="h-px"
-              style={{ background: 'rgba(56,189,248,0.08)' }}
-            />
-
-            <div className="flex flex-col gap-2.5">
-              {/* Place resume PDF in /public/downloads/chonvarin-resume.pdf */}
-              <a
-                href="/downloads/chonvarin-resume.pdf"
-                download
-                className="btn-primary w-full justify-center"
-              >
-                <Download className="w-4 h-4" />
-                Download Resume PDF
-              </a>
-              {/* Place resume DOCX in /public/downloads/chonvarin-resume.docx */}
-              <a
-                href="/downloads/chonvarin-resume.docx"
-                download
-                className="btn-secondary w-full justify-center"
-              >
-                <Download className="w-4 h-4" />
-                Download Resume DOCX
-              </a>
-              <Link to="/resume" className="btn-ghost w-full justify-center">
-                <FileText className="w-4 h-4" />
-                View Online Resume
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export default function Home() {
   return (
     <>
@@ -599,7 +505,6 @@ export default function Home() {
       <PortfolioPreviewSection />
       <ClientsSection />
       <ProcessSection />
-      <ResumePreviewSection />
       <ContactCTA />
     </>
   )

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, MapPin, ExternalLink, ArrowUpRight } from 'lucide-react'
+import { Mail, MapPin, ExternalLink, ArrowUpRight, FileText } from 'lucide-react'
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -111,40 +111,19 @@ export default function Footer() {
 
           <div className="md:col-span-4">
             <p className="text-[#F8FAFC] text-xs font-semibold tracking-[0.12em] uppercase mb-5">
-              Downloads
+              For HR / Recruiters
             </p>
-            <div className="flex flex-col gap-3">
-              <a
-                href="/downloads/chonvarin-resume.pdf"
-                download
-                className="flex items-center gap-3 p-3 rounded-xl border border-[#1A2535] bg-[#0A1020] hover:border-[#38BDF8]/25 hover:bg-[#38BDF8]/4 transition-all duration-200 group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#38BDF8]/8 border border-[#38BDF8]/15 flex items-center justify-center flex-shrink-0">
-                  <span className="text-[#38BDF8] text-xs font-bold">PDF</span>
-                </div>
-                <div>
-                  <p className="text-[#CBD5E1] text-xs font-medium group-hover:text-[#F8FAFC] transition-colors">
-                    Resume — PDF
-                  </p>
-                  <p className="text-[#94A3B8]/70 text-xs">For HR & recruiters</p>
-                </div>
-              </a>
-              <a
-                href="/downloads/chonvarin-resume.docx"
-                download
-                className="flex items-center gap-3 p-3 rounded-xl border border-[#1A2535] bg-[#0A1020] hover:border-[#38BDF8]/25 hover:bg-[#38BDF8]/4 transition-all duration-200 group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#94A3B8]/8 border border-[#94A3B8]/10 flex items-center justify-center flex-shrink-0">
-                  <span className="text-[#94A3B8] text-xs font-bold">DOC</span>
-                </div>
-                <div>
-                  <p className="text-[#CBD5E1] text-xs font-medium group-hover:text-[#F8FAFC] transition-colors">
-                    Resume — DOCX
-                  </p>
-                  <p className="text-[#94A3B8]/70 text-xs">Editable format</p>
-                </div>
-              </a>
-            </div>
+            <p className="text-[#94A3B8] text-sm leading-relaxed mb-4 max-w-xs">
+              Resume details, achievements, and downloadable files are available on the Resume page.
+            </p>
+            <Link
+              to="/resume"
+              className="inline-flex items-center gap-2 text-[#38BDF8] text-sm font-medium hover:text-[#7DD3FC] transition-colors group"
+            >
+              <FileText className="w-4 h-4" />
+              View Resume &amp; Downloads
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
+            </Link>
           </div>
         </div>
 
