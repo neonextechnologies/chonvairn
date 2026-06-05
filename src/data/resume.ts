@@ -1,21 +1,5 @@
 export const experiences = [
   {
-    id: 'neonex',
-    role: 'Founder / CEO',
-    company: 'Neonex Technologies Co., Ltd.',
-    period: '2025 – Present',
-    type: 'current',
-    description:
-      'Founded and lead a technology company focused on IT solutions, digital transformation, workflow automation, hosting infrastructure, and AI-enabled business systems for SME and enterprise clients.',
-    highlights: [
-      'Technology company founding and business development',
-      'IT solution architecture and delivery oversight',
-      'Client consultation and digital transformation advisory',
-      'Hosting infrastructure and deployment operations',
-      'AI-enabled workflow and automation solutions',
-    ],
-  },
-  {
     id: 'mayavadee',
     role: 'IT Project Manager / Co-founder & Developer',
     company: 'Mayavadee IT Solution / Maya Soft',
@@ -24,11 +8,16 @@ export const experiences = [
     description:
       'Co-founded and led IT project delivery for enterprise and corporate clients across Thailand. Managed end-to-end software development, system implementation, infrastructure, and digital transformation projects.',
     highlights: [
-      'End-to-end IT project management for 14+ enterprise clients',
-      'Coordinated technical teams of up to 5 members',
-      'Developed LineCRM, MayaCMS, and MayaPanelGenerator',
-      'Delivered solutions for Retail, Industrial, Financial, and Real Estate sectors',
-      'Requirement gathering, business analysis, and solution architecture',
+      'Managed end-to-end IT project delivery across requirement gathering, project planning, development coordination, UAT, deployment, and post-implementation support.',
+      'Analyzed client business problems and translated business needs into system requirements, workflow designs, and project deliverables.',
+      'Coordinated with clients, stakeholders, vendors, and technical teams to clarify scope, priorities, issues, and change requests.',
+      'Led a technical team of up to 5 members across task assignment, progress tracking, issue resolution, quality control, and delivery coordination.',
+      'Delivered IT solutions for major enterprise and corporate clients including Tesco Lotus, SCG, MegaHome, Thai Honda, Pruksa, Thanachart Bank, Thanachart Insurance, and other organizations.',
+      'Designed and delivered web applications, CRM systems, CMS platforms, admin panels, API integrations, and custom business systems.',
+      'Managed project scope, timeline, risks, issues, documentation, and change requests.',
+      'Coordinated IT infrastructure tasks including Linux/Ubuntu server environments, Proxmox virtualization, hosting setup, deployment, and post-deployment support.',
+      'Developed and maintained LineCRM, MayaCMS, and MayaPanelGenerator.',
+      'Applied digital transformation, workflow automation, and AI-enabled solution concepts to improve business processes and support scalable solution delivery.',
     ],
   },
   {
@@ -220,3 +209,6 @@ export const achievements = [
       'Applied workflow automation, digital transformation, and AI-enabled solution concepts to reduce repetitive work and improve business process efficiency.',
   },
 ]
+
+
+export { experiences, education }
