@@ -4,8 +4,6 @@ import { ArrowRight, MessageSquare, FileText } from 'lucide-react'
 interface ContactCTAProps {
   title?: string
   titleTh?: string
-  subtitle?: string
-  subtitleTh?: string
 }
 
 export default function ContactCTA({
@@ -13,21 +11,35 @@ export default function ContactCTA({
   titleTh = 'หากธุรกิจของคุณต้องการระบบ เว็บไซต์ เวิร์กโฟลว์ หรือโครงการ IT ที่ต้องการส่งมอบให้ใช้งานได้จริง สามารถพูดคุยเพื่อวิเคราะห์แนวทางร่วมกันได้',
 }: ContactCTAProps) {
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050B18] via-[#0B1220] to-[#050B18]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#38BDF8]/5 blur-3xl pointer-events-none" />
+    <section className="relative py-24 overflow-hidden">
+      {/* Background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(180deg, #050B18 0%, #0A1020 50%, #050B18 100%)',
+        }}
+      />
+      {/* Fine grid */}
+      <div className="absolute inset-0 bg-grid-fine opacity-60" />
+      {/* Glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] rounded-full pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse, rgba(56,189,248,0.07) 0%, transparent 70%)',
+        }}
+      />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Gold accent line */}
+      <div className="relative max-w-3xl mx-auto px-5 sm:px-8 text-center">
+        {/* Gold accent */}
         <div className="flex justify-center mb-6">
-          <div className="w-8 h-0.5 bg-[#D4AF37] rounded-full" />
+          <div className="w-8 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-transparent rounded-full" />
         </div>
 
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#F8FAFC] leading-tight mb-3">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#F8FAFC] leading-tight tracking-tight mb-4">
           {title}
         </h2>
-        <p className="text-[#94A3B8] text-base leading-relaxed max-w-2xl mx-auto mb-8">
+        <p className="text-[#94A3B8] text-sm leading-relaxed max-w-xl mx-auto mb-10">
           {titleTh}
         </p>
 
