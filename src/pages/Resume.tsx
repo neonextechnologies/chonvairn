@@ -42,11 +42,7 @@ const contactItems = [
   { icon: <MapPin className="w-3.5 h-3.5" />, href: null, label: 'Pathum Thani, Thailand', ext: false },
 ]
 
-// Download file paths — place files at:
-//   public/downloads/chonvarin-resume.pdf
-//   public/downloads/chonvarin-resume.docx
 const downloadPdf = '/downloads/chonvarin-resume.pdf'
-const downloadDocx = '/downloads/chonvarin-resume.docx'
 
 export default function Resume() {
   return (
@@ -115,10 +111,10 @@ export default function Resume() {
             <div className="flex-1 min-w-0">
               <p className="text-[#94A3B8] text-sm leading-relaxed">
                 <FileText className="w-3.5 h-3.5 inline mr-1.5 text-[#38BDF8] align-text-top" />
-                PDF and DOCX versions are available for HR review, recruitment screening, and professional reference.
+                PDF version is available for HR review, recruitment screening, and professional reference.
               </p>
               <p className="text-[#64748B] text-xs mt-0.5">
-                มีไฟล์ PDF และ DOCX สำหรับ HR ใช้ตรวจสอบประวัติ พิจารณางาน และใช้อ้างอิงทางวิชาชีพ
+                มีไฟล์ PDF สำหรับ HR ใช้ตรวจสอบประวัติ พิจารณางาน และใช้อ้างอิงทางวิชาชีพ
               </p>
             </div>
             {/* Buttons */}
@@ -130,14 +126,6 @@ export default function Resume() {
               >
                 <Download className="w-4 h-4" />
                 Download PDF
-              </a>
-              <a
-                href={downloadDocx}
-                download
-                className="btn-secondary text-sm py-2.5 px-5"
-              >
-                <Download className="w-4 h-4" />
-                Download DOCX
               </a>
               <a
                 href="https://linkedin.chonvarin.com"
@@ -490,14 +478,6 @@ export default function Resume() {
               >
                 <Download className="w-4 h-4" />
                 Download Resume PDF
-              </a>
-              <a
-                href={downloadDocx}
-                download
-                className="btn-secondary text-sm justify-center"
-              >
-                <Download className="w-4 h-4" />
-                Download Resume DOCX
               </a>
               <Link to="/contact" className="btn-ghost text-sm justify-center">
                 <Mail className="w-4 h-4" />
