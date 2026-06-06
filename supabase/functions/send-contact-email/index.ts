@@ -157,8 +157,8 @@ Deno.serve(async (req: Request) => {
     const submittedAt = formatDate(new Date());
 
     const emailPayload = {
-      from: "Contact Form <contact@chonvarin.com>",
-      to: ["me@chonvarin.com", "neonextechnologies@gmail.com"],
+      from: "Chonvarin Contact <noreply@chonvarin.com>",
+      to: ["neonextechnologies@gmail.com"],
       reply_to: body.email.trim(),
       subject: `[chonvarin.com] New message from ${body.name.trim()}${body.projectType ? ` — ${body.projectType}` : ""}`,
       html: buildHtmlEmail(body, submittedAt),
