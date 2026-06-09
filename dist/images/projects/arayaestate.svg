@@ -1,0 +1,21 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102231"/>
+      <stop offset="1" stop-color="#1C2A24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#A8E0C5">
+    <rect x="90" y="90" width="1020" height="495" rx="24"/>
+    <path d="M90 190H1110M90 290H1110M90 390H1110M90 490H1110"/>
+  </g>
+  <rect x="130" y="140" width="420" height="395" rx="20" fill="#183344" stroke="#66D0E1" stroke-opacity="0.45"/>
+  <rect x="590" y="140" width="480" height="185" rx="20" fill="#183344" stroke="#B8E58E" stroke-opacity="0.45"/>
+  <rect x="590" y="350" width="480" height="185" rx="20" fill="#183344" stroke="#66D0E1" stroke-opacity="0.45"/>
+  <path d="M170 500L250 410L330 460L410 360L510 440" stroke="#8DE6B2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="170" y="225" fill="#D4F5FF" font-size="34" font-family="Segoe UI, sans-serif" font-weight="700">Estate Properties Platform</text>
+  <text x="170" y="266" fill="#AED4DA" font-size="20" font-family="Segoe UI, sans-serif">Real Estate Listings and Lead Flow</text>
+  <text x="628" y="220" fill="#D8F0C1" font-size="24" font-family="Segoe UI, sans-serif" font-weight="600">Bilingual Listing Showcase</text>
+  <text x="628" y="430" fill="#B7E5F7" font-size="24" font-family="Segoe UI, sans-serif" font-weight="600">Inquiry Funnel + SEO</text>
+</svg>

@@ -1,0 +1,78 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08101A"/>
+      <stop offset="1" stop-color="#102033"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#54D4FF"/>
+      <stop offset="1" stop-color="#2A9CFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="70" y="60" width="1060" height="555" rx="24" fill="#0C1624" stroke="#68C7FF" stroke-opacity="0.25"/>
+
+  <rect x="70" y="60" width="1060" height="54" rx="24" fill="#0F1D2D"/>
+  <circle cx="102" cy="87" r="6" fill="#FF7C7C"/>
+  <circle cx="122" cy="87" r="6" fill="#FFC965"/>
+  <circle cx="142" cy="87" r="6" fill="#77E097"/>
+  <rect x="188" y="78" width="220" height="18" rx="9" fill="#142A40"/>
+  <text x="205" y="91" fill="#9EC4DE" font-size="12" font-family="Segoe UI, sans-serif">MayaPanelGenerator Dashboard</text>
+
+  <rect x="70" y="114" width="210" height="501" fill="#0B1828"/>
+  <text x="100" y="162" fill="#D8ECFF" font-size="20" font-family="Segoe UI, sans-serif" font-weight="700">Admin Panel</text>
+  <rect x="92" y="190" width="166" height="36" rx="8" fill="#14334F" stroke="#54D4FF" stroke-opacity="0.4"/>
+  <text x="112" y="213" fill="#CDE8FF" font-size="14" font-family="Segoe UI, sans-serif">Overview</text>
+  <rect x="92" y="236" width="166" height="36" rx="8" fill="#12263B"/>
+  <text x="112" y="259" fill="#97B7D1" font-size="14" font-family="Segoe UI, sans-serif">Tables</text>
+  <rect x="92" y="282" width="166" height="36" rx="8" fill="#12263B"/>
+  <text x="112" y="305" fill="#97B7D1" font-size="14" font-family="Segoe UI, sans-serif">Permissions</text>
+  <rect x="92" y="328" width="166" height="36" rx="8" fill="#12263B"/>
+  <text x="112" y="351" fill="#97B7D1" font-size="14" font-family="Segoe UI, sans-serif">API Builder</text>
+
+  <rect x="312" y="138" width="238" height="94" rx="14" fill="#102435" stroke="#54D4FF" stroke-opacity="0.25"/>
+  <rect x="570" y="138" width="238" height="94" rx="14" fill="#102435" stroke="#54D4FF" stroke-opacity="0.25"/>
+  <rect x="828" y="138" width="270" height="94" rx="14" fill="#102435" stroke="#FFD08A" stroke-opacity="0.3"/>
+  <text x="338" y="172" fill="#A8D2F2" font-size="13" font-family="Segoe UI, sans-serif">Active Modules</text>
+  <text x="338" y="210" fill="#E0F2FF" font-size="34" font-family="Segoe UI, sans-serif" font-weight="700">24</text>
+  <text x="596" y="172" fill="#A8D2F2" font-size="13" font-family="Segoe UI, sans-serif">Generated CRUD</text>
+  <text x="596" y="210" fill="#E0F2FF" font-size="34" font-family="Segoe UI, sans-serif" font-weight="700">148</text>
+  <text x="854" y="172" fill="#E5C99D" font-size="13" font-family="Segoe UI, sans-serif">Deploy Success</text>
+  <text x="854" y="210" fill="#FFF1D9" font-size="34" font-family="Segoe UI, sans-serif" font-weight="700">99.8%</text>
+
+  <rect x="312" y="250" width="500" height="222" rx="14" fill="#102435" stroke="#54D4FF" stroke-opacity="0.2"/>
+  <text x="338" y="286" fill="#D7EDFF" font-size="18" font-family="Segoe UI, sans-serif" font-weight="600">Module Activity</text>
+  <path d="M350 432L350 320" stroke="#2B4964" stroke-width="1"/>
+  <path d="M350 432H776" stroke="#2B4964" stroke-width="1"/>
+  <rect x="372" y="377" width="24" height="55" rx="5" fill="#2B90E0"/>
+  <rect x="413" y="344" width="24" height="88" rx="5" fill="#2EA9F6"/>
+  <rect x="454" y="360" width="24" height="72" rx="5" fill="#2B90E0"/>
+  <rect x="495" y="328" width="24" height="104" rx="5" fill="#54D4FF"/>
+  <rect x="536" y="346" width="24" height="86" rx="5" fill="#2EA9F6"/>
+  <rect x="577" y="311" width="24" height="121" rx="5" fill="#78E0FF"/>
+  <rect x="618" y="335" width="24" height="97" rx="5" fill="#2EA9F6"/>
+  <rect x="659" y="295" width="24" height="137" rx="5" fill="#FFD08A"/>
+  <rect x="700" y="318" width="24" height="114" rx="5" fill="#54D4FF"/>
+  <rect x="741" y="342" width="24" height="90" rx="5" fill="#2EA9F6"/>
+
+  <rect x="828" y="250" width="270" height="222" rx="14" fill="#102435" stroke="#54D4FF" stroke-opacity="0.2"/>
+  <text x="854" y="286" fill="#D7EDFF" font-size="18" font-family="Segoe UI, sans-serif" font-weight="600">Quick Actions</text>
+  <rect x="854" y="310" width="218" height="34" rx="8" fill="#14334F"/>
+  <text x="876" y="332" fill="#CAE8FF" font-size="13" font-family="Segoe UI, sans-serif">Generate New Module</text>
+  <rect x="854" y="354" width="218" height="34" rx="8" fill="#122B42"/>
+  <text x="876" y="376" fill="#A8C8E2" font-size="13" font-family="Segoe UI, sans-serif">Sync Permission Matrix</text>
+  <rect x="854" y="398" width="218" height="34" rx="8" fill="#122B42"/>
+  <text x="876" y="420" fill="#A8C8E2" font-size="13" font-family="Segoe UI, sans-serif">Export API Blueprint</text>
+
+  <rect x="312" y="490" width="786" height="96" rx="14" fill="#102435" stroke="#54D4FF" stroke-opacity="0.2"/>
+  <text x="338" y="524" fill="#D7EDFF" font-size="18" font-family="Segoe UI, sans-serif" font-weight="600">Recent Generated Tables</text>
+  <text x="338" y="552" fill="#9EC3DD" font-size="13" font-family="Segoe UI, sans-serif">users</text>
+  <text x="498" y="552" fill="#9EC3DD" font-size="13" font-family="Segoe UI, sans-serif">orders</text>
+  <text x="658" y="552" fill="#9EC3DD" font-size="13" font-family="Segoe UI, sans-serif">audit_logs</text>
+  <text x="838" y="552" fill="#9EC3DD" font-size="13" font-family="Segoe UI, sans-serif">roles_permissions</text>
+  <rect x="338" y="560" width="130" height="6" rx="3" fill="url(#cyan)"/>
+  <rect x="498" y="560" width="130" height="6" rx="3" fill="#3CAFEF"/>
+  <rect x="658" y="560" width="130" height="6" rx="3" fill="#3CAFEF"/>
+  <rect x="838" y="560" width="130" height="6" rx="3" fill="#FFD08A"/>
+</svg>
