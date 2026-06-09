@@ -1,0 +1,22 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1420"/>
+      <stop offset="1" stop-color="#101F30"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.22">
+    <path d="M120 120H1080V555H120V120Z" stroke="#9BD6FF"/>
+    <path d="M120 195H1080M120 270H1080M120 345H1080M120 420H1080M120 495H1080" stroke="#9BD6FF"/>
+  </g>
+  <rect x="160" y="160" width="360" height="355" rx="18" fill="#12243A" stroke="#58BFFF" stroke-opacity="0.4"/>
+  <rect x="560" y="160" width="480" height="160" rx="18" fill="#12243A" stroke="#FFD38E" stroke-opacity="0.4"/>
+  <rect x="560" y="355" width="220" height="160" rx="18" fill="#12243A" stroke="#58BFFF" stroke-opacity="0.4"/>
+  <rect x="820" y="355" width="220" height="160" rx="18" fill="#12243A" stroke="#58BFFF" stroke-opacity="0.4"/>
+  <text x="200" y="225" fill="#D7ECFF" font-size="32" font-family="Segoe UI, sans-serif" font-weight="700">MayaPanelGenerator</text>
+  <text x="200" y="264" fill="#99BAD8" font-size="20" font-family="Segoe UI, sans-serif">Admin CRUD Generator</text>
+  <text x="600" y="220" fill="#FFE0B5" font-size="24" font-family="Segoe UI, sans-serif" font-weight="600">Schema to Panel Builder</text>
+  <text x="600" y="418" fill="#C8E9FF" font-size="20" font-family="Segoe UI, sans-serif">Role & Permission</text>
+  <text x="860" y="418" fill="#C8E9FF" font-size="20" font-family="Segoe UI, sans-serif">API Endpoint Map</text>
+</svg>

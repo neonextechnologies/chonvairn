@@ -1,0 +1,25 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1D2B"/>
+      <stop offset="1" stop-color="#0E2B25"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.2" stroke="#8CD9D0">
+    <rect x="100" y="100" width="1000" height="475" rx="24"/>
+    <path d="M100 210H1100M100 320H1100M100 430H1100"/>
+  </g>
+  <rect x="150" y="150" width="900" height="375" rx="24" fill="#163443" stroke="#77E6C8" stroke-opacity="0.35"/>
+  <rect x="200" y="230" width="180" height="88" rx="14" fill="#1A4052" stroke="#71C8FF" stroke-opacity="0.5"/>
+  <rect x="510" y="230" width="180" height="88" rx="14" fill="#1A4052" stroke="#71C8FF" stroke-opacity="0.5"/>
+  <rect x="820" y="230" width="180" height="88" rx="14" fill="#1A4052" stroke="#71C8FF" stroke-opacity="0.5"/>
+  <path d="M380 274H510M690 274H820" stroke="#77E6C8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="510" cy="274" r="8" fill="#77E6C8"/>
+  <circle cx="820" cy="274" r="8" fill="#77E6C8"/>
+  <text x="220" y="205" fill="#D7F6FF" font-size="34" font-family="Segoe UI, sans-serif" font-weight="700">Workflow Automation</text>
+  <text x="220" y="244" fill="#A2CAD8" font-size="20" font-family="Segoe UI, sans-serif">Business Process Optimization</text>
+  <text x="228" y="282" fill="#D9F1FF" font-size="20" font-family="Segoe UI, sans-serif">Trigger</text>
+  <text x="546" y="282" fill="#D9F1FF" font-size="20" font-family="Segoe UI, sans-serif">Process</text>
+  <text x="858" y="282" fill="#D9F1FF" font-size="20" font-family="Segoe UI, sans-serif">Outcome</text>
+</svg>

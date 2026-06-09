@@ -26,7 +26,7 @@ export const projects: Project[] = [
     businessValue:
       'Improved customer communication, follow-up workflow, and customer data management for LINE-centric business operations.',
     technologies: ['Laravel', 'LINE API', 'MySQL', 'JavaScript', 'Workflow Automation'],
-    imagePath: '/images/projects/linecrm.jpg',
+    imagePath: '/images/projects/linecrm.svg',
     featured: true,
   },
   {
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     businessValue:
       'Reduced dependency on developers for routine content updates, empowering non-technical staff to manage content independently.',
     technologies: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'Bootstrap'],
-    imagePath: '/images/projects/mayacms.jpg',
+    imagePath: '/images/projects/mayacms.svg',
     featured: true,
   },
   {
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     businessValue:
       'Reduced repetitive backend development work and improved delivery consistency across multiple client projects.',
     technologies: ['PHP', 'CodeIgniter', 'MySQL', 'JavaScript', 'Bootstrap'],
-    imagePath: '/images/projects/mayapanelgenerator.jpg',
+    imagePath: '/images/projects/mayapanelgenerator.svg',
     featured: true,
   },
   {
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     businessValue:
       'Improved online property presentation, customer inquiry flow, and bilingual business communication for the real estate project.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'CMS Integration'],
-    imagePath: '/images/projects/arayaestate.jpg',
+    imagePath: '/images/projects/arayaestate.svg',
     featured: true,
   },
   {
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     businessValue:
       'Provides a scalable foundation for client solution delivery and professional IT services to businesses across multiple industries.',
     technologies: ['Linux', 'Proxmox', 'Laravel', 'Golang', 'Next.js', 'AI Integration'],
-    imagePath: '/images/projects/neonex-technologies.jpg',
+    imagePath: '/images/projects/neonex-technologies.svg',
     featured: true,
   },
   {
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     businessValue:
       'Reduced manual workload, improved process consistency, and freed staff time for higher-value business activities.',
     technologies: ['Workflow Design', 'API Integration', 'AI Tools', 'Process Automation'],
-    imagePath: '/images/projects/workflow-automation.jpg',
+    imagePath: '/images/projects/workflow-automation.svg',
     featured: false,
   },
 ]

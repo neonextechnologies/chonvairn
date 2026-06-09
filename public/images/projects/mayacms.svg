@@ -1,0 +1,22 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A1028"/>
+      <stop offset="1" stop-color="#0E1D32"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.2" stroke="#90B6FF">
+    <rect x="90" y="90" width="1020" height="495" rx="24"/>
+    <path d="M90 180H1110M90 270H1110M90 360H1110M90 450H1110"/>
+  </g>
+  <rect x="140" y="140" width="320" height="395" rx="20" fill="#1C2A45" stroke="#7E9DFF" stroke-opacity="0.45"/>
+  <rect x="500" y="140" width="560" height="120" rx="20" fill="#132540" stroke="#57C6FF" stroke-opacity="0.45"/>
+  <rect x="500" y="290" width="260" height="245" rx="20" fill="#132540" stroke="#57C6FF" stroke-opacity="0.45"/>
+  <rect x="800" y="290" width="260" height="245" rx="20" fill="#132540" stroke="#D1A0FF" stroke-opacity="0.45"/>
+  <text x="180" y="220" fill="#C9D9FF" font-size="34" font-family="Segoe UI, sans-serif" font-weight="700">MayaCMS</text>
+  <text x="180" y="262" fill="#9AAED5" font-size="20" font-family="Segoe UI, sans-serif">Content Management System</text>
+  <text x="540" y="208" fill="#C9E6FF" font-size="24" font-family="Segoe UI, sans-serif" font-weight="600">Page Builder / Media / Posts</text>
+  <text x="540" y="360" fill="#C9E6FF" font-size="20" font-family="Segoe UI, sans-serif">Article Workflow</text>
+  <text x="840" y="360" fill="#E8CBFF" font-size="20" font-family="Segoe UI, sans-serif">SEO + Publish</text>
+</svg>
