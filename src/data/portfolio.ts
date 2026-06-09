@@ -63,16 +63,16 @@ export const projects: Project[] = [
   },
   {
     id: 'arayaestate',
-    name: 'Araya Estate 88',
-    category: 'Real Estate Web Platform',
-    tags: ['Real Estate', 'Web Platform', 'Bilingual'],
+    name: 'Estate Properties Platform',
+    category: 'Estate Properties Platform / Real Estate',
+    tags: ['Estate Properties', 'Real Estate', 'Bilingual'],
     role: 'Project Manager, Web Solution Advisor, Developer Coordination',
     problem:
-      'Real estate businesses need a professional online presence for property presentation, bilingual communication, and customer inquiry support.',
+      'Property businesses needed a modern estate properties platform for listings, project presentation, bilingual communication, and qualified lead capture.',
     solution:
-      'Created a property presentation and digital communication platform for real estate business, supporting both Thai and English audiences.',
+      'Designed and delivered an estate properties platform focused on property discovery, project storytelling, and Thai-English customer communication workflows.',
     businessValue:
-      'Improved online property presentation, customer inquiry flow, and bilingual business communication for the real estate project.',
+      'Improved listing visibility, inquiry conversion flow, and multilingual customer engagement for real estate sales and marketing teams.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'CMS Integration'],
     imagePath: '/images/projects/arayaestate.svg',
     featured: true,
@@ -116,7 +116,7 @@ export const categories = [
   'CRM / LINE Integration / Workflow',
   'CMS / Web Content Management',
   'Admin Panel Generator / Backend Workflow',
-  'Real Estate Web Platform',
+  'Estate Properties Platform / Real Estate',
   'Digital Solution / Hosting / AI-enabled Workflow',
   'Business Process / Workflow Automation',
 ]
