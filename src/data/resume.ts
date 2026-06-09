@@ -51,7 +51,7 @@ export const experiences = [
   },
   {
     id: 'family-amusement',
-    role: 'IT Support',
+    role: 'IT Support & Web Programmer',
     company: 'Family Amusement Group',
     period: '2000 – 2003',
     type: 'past',
@@ -59,6 +59,7 @@ export const experiences = [
       'Provided IT support for business operations. Gained foundational experience in systems, hardware, networking, and technical problem resolution.',
     highlights: [
       'IT infrastructure support',
+      'Developed and maintained websites in the role of Web Programmer.',
       'Hardware and software troubleshooting',
       'System maintenance',
       'Technical documentation',
