@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, MapPin, ExternalLink, ArrowUpRight, FileText } from 'lucide-react'
+import { Mail, Phone, MapPin, ExternalLink, ArrowUpRight, FileText } from 'lucide-react'
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -73,6 +73,13 @@ export default function Footer() {
               >
                 <Mail className="w-3.5 h-3.5 flex-shrink-0 group-hover:text-[#38BDF8]" />
                 me@chonvarin.com
+              </a>
+              <a
+                href="tel:0619866168"
+                className="flex items-center gap-2 text-[#94A3B8] text-sm hover:text-[#38BDF8] transition-colors group"
+              >
+                <Phone className="w-3.5 h-3.5 flex-shrink-0 group-hover:text-[#38BDF8]" />
+                061-9866168
               </a>
               <a
                 href="https://linkedin.chonvarin.com"

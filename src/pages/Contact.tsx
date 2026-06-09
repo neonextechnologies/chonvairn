@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, MapPin, ExternalLink, Send, CircleCheck as CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Mail, Phone, MapPin, ExternalLink, Send, CircleCheck as CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import SectionHeader from '../components/SectionHeader'
 
 const EDGE_FN_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`
@@ -166,6 +166,7 @@ export default function Contact() {
               <div className="flex flex-col gap-3">
                 {[
                   { icon: <Mail className="w-5 h-5 text-[#38BDF8]" />, label: 'Email', value: 'me@chonvarin.com', href: 'mailto:me@chonvarin.com' },
+                  { icon: <Phone className="w-5 h-5 text-[#38BDF8]" />, label: 'Phone', value: '061-9866168', href: 'tel:0619866168' },
                   { icon: <ExternalLink className="w-5 h-5 text-[#38BDF8]" />, label: 'LinkedIn', value: 'linkedin.chonvarin.com', href: 'https://linkedin.chonvarin.com', ext: true },
                   { icon: <ExternalLink className="w-5 h-5 text-[#38BDF8]" />, label: 'Portfolio', value: 'chonvarin.com', href: 'https://chonvarin.com', ext: true },
                 ].map((item) => (
